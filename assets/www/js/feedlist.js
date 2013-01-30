@@ -1,13 +1,11 @@
-//document.addEventListener("deviceready", onDeviceReady, false);
-$(document).ready(onSystemReady);
-function onSystemReady() {
+function loadFeed() {
 
     // is equal to true if a browser can create an XMLHttpRequest object and if that XMLHttpRequest object has a withCredentials property. To enable cross-domain requests in environments that do not support cors yet but do allow cross-domain XHR requests (windows gadget, etc), set $.support.cors = true;.
     $.support.cors = true;
 
     vars = getUrlVars();
 
-    $.getJSON("http://"+url+"/api/town/"+vars['id'], function (data) {
+    $.getJSON('http://'+url+'/api/town/'+vars['id']+'callback=?', function (data) {
         var items = [];
 
         $.each(data.feeds, function (key, feed) {
@@ -24,3 +22,4 @@ function onSystemReady() {
     });
 
 }
+*/

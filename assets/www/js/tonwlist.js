@@ -5,7 +5,7 @@ function onSystemReady() {
     // is equal to true if a browser can create an XMLHttpRequest object and if that XMLHttpRequest object has a withCredentials property. To enable cross-domain requests in environments that do not support cors yet but do allow cross-domain XHR requests (windows gadget, etc), set $.support.cors = true;.
     $.support.cors = true;
 
-    $.getJSON("http://"+url+"/api/towns", function (data) {
+    $.getJSON('http://'+url+'/api/towns?callback=?', function (data) {
         var items = [];
 
         $.each(data.towns, function (key, town) {
