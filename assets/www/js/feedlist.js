@@ -1,15 +1,23 @@
-function loadFeed() {
+//document.addEventListener("deviceready", onDeviceReady, false);
+$(document).ready(onSystemReady);
+function onSystemReady() {
 
     // is equal to true if a browser can create an XMLHttpRequest object and if that XMLHttpRequest object has a withCredentials property. To enable cross-domain requests in environments that do not support cors yet but do allow cross-domain XHR requests (windows gadget, etc), set $.support.cors = true;.
     $.support.cors = true;
+    loadFeed();
+    loadHistory();
+}
 
-    vars = getUrlVars();
-
-    $.getJSON('http://'+url+'/api/town/'+vars['id']+'callback=?', function (data) {
+function loadFeed() {
+    $.getJSON('http://'+url+'/api/feeds?callback=?', function (feeds) {
+        //@DEBUG
+        console.log('start');
         var items = [];
 
-        $.each(data.feeds, function (key, feed) {
-            items.push('<li class="feed-button" id="town' + feed._id.$id + '"><a href="feed.html">' + feed.name + '</a></li>');
+        $.each(feeds, function (key, feed) {
+            //@DEBUG
+            console.log(feed);
+            items.push('<li class="feed-button" id="town' + feed._id.$id + '"><a href="#">' + feed.title + '</a></li>');
         });
         $('<ul/>', {
             'data-role' : 'listview',
@@ -20,6 +28,4 @@ function loadFeed() {
         $('ul.dynamic').listview();
 
     });
-
 }
-*/
