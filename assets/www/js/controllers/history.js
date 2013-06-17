@@ -4,7 +4,7 @@ define(['config'], function(config) {
             var wikipediaHTMLResult = function(data) {
                 $('#content').append(data.parse.text["*"]);
             };
-            $.getJSON('http://en.wikipedia.org/w/api.php?action=parse&format=json&callback=?', {page:config.wikipedia, prop:'text|images', uselang:'it'}, wikipediaHTMLResult);
+            $.getJSON('http://it.wikipedia.org/w/api.php?action=parse&format=json&callback=?', {page:config.wikipedia, prop:'text|images', uselang:'it'}, wikipediaHTMLResult);
         }
     }
 });

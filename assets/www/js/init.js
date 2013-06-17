@@ -8,6 +8,8 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history'],
             $.support.cors = true;
             //show content
             $('html').css('display','block');
+            //to fix
+            feed.load();
 
             //register event
             $('#panel-nav a').on('click', function () {
@@ -23,6 +25,11 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history'],
             $('#history').on('click', function (){
                 content.removeAll();
                 history.load();
+            });
+            $(document).on('click', '.feed-button a', function () {
+                content.removeAll();
+                id = $(this).data('id');
+                f = feed.get(id);
             });
         }
     }
