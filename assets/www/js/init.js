@@ -1,6 +1,6 @@
-define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history'],
+define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weather'],
 
-    function($,jquerymobile, config, content, feed, history) {
+    function($,jquerymobile, config, content, feed, history, weather) {
         //document.addEventListener("deviceready", onDeviceReady, false);
         $(document).ready(onSystemReady);
 
@@ -8,8 +8,11 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history'],
             $.support.cors = true;
             //show content
             $('html').css('display','block');
-            //to fix
-            feed.load();
+            content.removeAll();
+            tags = ['Comune','Scuola','Varie'];
+                for(var i in tags) {
+                feed.loadByTag(tags[i]);
+            }
 
             //register event
             $('#panel-nav a').on('click', function () {
@@ -20,8 +23,12 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history'],
             });
             $('#news').on('click', function (){
                 content.removeAll();
-                feed.load();
+                tags = ['Comune','Scuola','Varie'];
+                for(var i in tags) {
+                    feed.loadByTag(tags[i]);
+                }
             });
+
             $('#history').on('click', function (){
                 content.removeAll();
                 history.load();
@@ -30,6 +37,11 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history'],
                 content.removeAll();
                 id = $(this).data('id');
                 f = feed.get(id);
+            });
+
+            $('#weather').on('click', function (){
+                content.removeAll();
+                weather.load();
             });
         }
     }

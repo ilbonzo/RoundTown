@@ -1,6 +1,6 @@
 define([], function() {
     return {
-        url: 'api.sanzvan.it',
+        url: 'api.sanzvan.bonzo:88',
         wikipedia: 'San Giovanni in Persiceto'
     }
 });

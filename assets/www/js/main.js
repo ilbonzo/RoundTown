@@ -10,6 +10,7 @@ require.config({
         //controllers
         'feed': 'controllers/feed',
         'history': 'controllers/history',
+        'weather': 'controllers/weather',
 
         //helpers
         'content': 'helpers/content'

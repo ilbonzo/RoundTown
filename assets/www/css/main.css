@@ -1,3 +1,13 @@
 html {
 	display:none;
 }
+
+.newsItem time {
+	float:right;
+	font-style: italic;
+}
+
+.newsItem footer {
+	text-align: right;
+	font-style: italic;
+}
