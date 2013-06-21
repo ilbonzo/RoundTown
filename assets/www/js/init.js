@@ -1,6 +1,6 @@
-define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weather'],
+define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weather', 'home', 'gallery'],
 
-    function($,jquerymobile, config, content, feed, history, weather) {
+    function($,jquerymobile, config, content, feed, history, weather, home, gallery) {
         //document.addEventListener("deviceready", onDeviceReady, false);
         $(document).ready(onSystemReady);
 
@@ -8,24 +8,22 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weath
             $.support.cors = true;
             //show content
             $('html').css('display','block');
-            content.removeAll();
-            tags = ['Comune','Scuola','Varie'];
-                for(var i in tags) {
-                feed.loadByTag(tags[i]);
-            }
+            home.load();
 
             //register event
             $('#panel-nav a').on('click', function () {
                 $('#panel-nav').panel('close');
             });
+
             $('#home').on('click', function () {
                 content.removeAll();
+                home.load();
             });
+
             $('#news').on('click', function (){
                 content.removeAll();
-                tags = ['Comune','Scuola','Varie'];
-                for(var i in tags) {
-                    feed.loadByTag(tags[i]);
+                for(var i in config.tags) {
+                    feed.loadByTag(config.tags[i],'#content');
                 }
             });
 
@@ -33,10 +31,16 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weath
                 content.removeAll();
                 history.load();
             });
+
             $(document).on('click', '.feed-button a', function () {
                 content.removeAll();
                 id = $(this).data('id');
                 f = feed.get(id);
+            });
+
+            $('#gallery').on('click', function (){
+                content.removeAll();
+                gallery.load();
             });
 
             $('#weather').on('click', function (){
