@@ -1,6 +1,6 @@
-define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weather', 'home', 'gallery'],
+define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weather', 'home', 'klass', 'photoswipe', 'gallery'],
 
-    function($,jquerymobile, config, content, feed, history, weather, home, gallery) {
+    function($,jquerymobile, config, content, feed, history, weather, home, klass, photoswipe, gallery) {
         //document.addEventListener("deviceready", onDeviceReady, false);
         $(document).ready(onSystemReady);
 
@@ -41,6 +41,10 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weath
             $('#gallery').on('click', function (){
                 content.removeAll();
                 gallery.load();
+                $('.gallery a').photoSwipe({
+                    enableMouseWheel: true,
+                    enableKeyboard: true
+                });
             });
 
             $('#weather').on('click', function (){
