@@ -39,6 +39,7 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weath
                 content.removeAll();
                 id = $(this).data('id');
                 f = feed.get(id);
+                content.setTitle($(this).text());
             });
 
             $('#gallery').on('click', function (){
