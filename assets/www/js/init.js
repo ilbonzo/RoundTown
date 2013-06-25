@@ -1,8 +1,8 @@
 define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weather', 'home', 'klass', 'photoswipe', 'gallery', 'contact'],
 
     function($,jquerymobile, config, content, feed, history, weather, home, klass, photoswipe, gallery, contact) {
-        //document.addEventListener("deviceready", onDeviceReady, false);
-        $(document).ready(onSystemReady);
+        document.addEventListener("deviceready", onDeviceReady, false);
+        //$(document).ready(onSystemReady);
 
         function onSystemReady() {
             $.support.cors = true;
