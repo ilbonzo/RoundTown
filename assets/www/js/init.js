@@ -41,10 +41,6 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weath
             $('#gallery').on('click', function (){
                 content.removeAll();
                 gallery.load();
-                $('.gallery a').photoSwipe({
-                    enableMouseWheel: true,
-                    enableKeyboard: true
-                });
             });
 
             $('#weather').on('click', function (){

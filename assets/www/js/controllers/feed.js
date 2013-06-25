@@ -33,7 +33,6 @@ define(['config'], function(config) {
         },
         get: function (id) {
             $.getJSON('http://'+config.url+'/api/feeds/' + id + '?callback=?', function (news) {
-                console.log(news);
                 var items = [];
                 $.each(news, function (key, n) {
                     items.push('<div data-role="collapsible"  data-collapsed="true" class="news-button">\
