@@ -1,6 +1,6 @@
-define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weather', 'home', 'klass', 'photoswipe', 'gallery'],
+define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weather', 'home', 'klass', 'photoswipe', 'gallery', 'contact'],
 
-    function($,jquerymobile, config, content, feed, history, weather, home, klass, photoswipe, gallery) {
+    function($,jquerymobile, config, content, feed, history, weather, home, klass, photoswipe, gallery, contact) {
         //document.addEventListener("deviceready", onDeviceReady, false);
         $(document).ready(onSystemReady);
 
@@ -18,6 +18,7 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weath
             $('#home').on('click', function () {
                 content.removeAll();
                 home.load();
+                content.setTitle();
             });
 
             $('#news').on('click', function (){
@@ -25,11 +26,13 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weath
                 for(var i in config.tags) {
                     feed.loadByTag(config.tags[i],'#content');
                 }
+                content.setTitle('News');
             });
 
             $('#history').on('click', function (){
                 content.removeAll();
                 history.load();
+                content.setTitle('Storia');
             });
 
             $(document).on('click', '.feed-button a', function () {
@@ -41,11 +44,18 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weath
             $('#gallery').on('click', function (){
                 content.removeAll();
                 gallery.load();
+                content.setTitle('Immagini');
             });
 
-            $('#weather').on('click', function (){
+            //$('#weather').on('click', function (){
+            //    content.removeAll();
+            //    weather.load();
+            //});
+
+            $('#contact').on('click', function (){
                 content.removeAll();
-                weather.load();
+                contact.load();
+                content.setTitle('Contatti');
             });
         }
     }

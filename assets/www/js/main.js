@@ -11,6 +11,7 @@ require.config({
 
         //controllers
         'feed': 'controllers/feed',
+        'contact': 'controllers/contact',
         'gallery': 'controllers/gallery',
         'history': 'controllers/history',
         'home': 'controllers/home',
