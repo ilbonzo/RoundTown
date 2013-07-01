@@ -1,17 +1,12 @@
-html {
-	display:none;
-}
-
 .newsItem time {
-	float:right;
-	font-style: italic;
+    float:right;
+    font-style: italic;
 }
 
 .newsItem footer {
-	text-align: right;
-	font-style: italic;
+    text-align: right;
+    font-style: italic;
 }
-
 
 .gallery {
     list-style: none;
@@ -44,3 +39,12 @@ html {
     height: auto;
 }
 
+#startOverlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000000;
+}
