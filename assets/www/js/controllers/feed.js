@@ -1,20 +1,5 @@
 define(['config'], function(config) {
     return {
-        // loadAll: function () {
-        //     $.getJSON('http://'+config.url+'/api/feeds?callback=?', function (feeds) {
-        //         var items = [];
-        //         $.each(feeds, function (key, feed) {
-        //             items.push('<li class="feed-button" id="feed-' + feed._id.$id + '"><a data-id="' + feed._id.$id + '" href="#">' + feed.title + '</a></li>');
-        //         });
-        //         $('<ul/>', {
-        //             'data-role' : 'listview',
-        //             'data-inset' : 'true',
-        //             'class' : 'dynamic',
-        //             html: items.join('')
-        //         }).appendTo('#content');
-        //         $('ul.dynamic').listview();
-        //     });
-        // },
         loadByTag: function (tag,elToAppend) {
             $.getJSON('http://'+config.url+'/api/feeds?tag=' + tag + '&callback=?', function (feeds) {
                 var items = [];

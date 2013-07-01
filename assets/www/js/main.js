@@ -23,4 +23,4 @@ require.config({
      }
 });
 
-require(['init']);
+require(['app']);
