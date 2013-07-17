@@ -8,7 +8,7 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weath
                 //show content
                 content.removeAll();
                 $('#startOverlay').remove();
-                home.load();
+                //home.load();
 
                 //register event
                 $('#panel-nav a').on('click', function () {
