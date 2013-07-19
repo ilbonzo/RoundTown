@@ -1,14 +1,4 @@
-
-// Mobile Router
-// =============
-
-// Includes file dependencies
-define([
-    'jquery',
-    'backbone',
-    'homeView'
-    ],
-    function( $, Backbone, HomeView ) {
+define(['jquery', 'backbone', 'homeView', 'feedView'], function( $, Backbone, HomeView, FeedView ) {
 
         // Extends Backbone.Router
         var AppRouter = Backbone.Router.extend( {
@@ -23,21 +13,38 @@ define([
         routes: {
             // When there is no hash bang on the url, the home method is called
             '': 'home',
-            'news': 'news'
+            'feed': 'feed',
+            'news?:id': 'news',
+            'history': 'history',
+            'gallery': 'gallery'
         },
 
         // Home method
         home: function() {
             $.mobile.loading('show');
             var home = new HomeView();
-            home.render();
             $.mobile.loading('hide');
         },
 
-        news: function() {
+        feed: function() {
             $.mobile.loading('show');
-            console.log('News');
+            console.log('Feed');
+            var feed = new FeedView();
             $.mobile.loading('hide');
+        },
+
+        news: function(id) {
+            $.mobile.loading('show');
+            console.log('News ' + id);
+            $.mobile.loading('hide');
+        },
+
+        history: function() {
+
+        },
+
+        gallery: function() {
+
         }
 
     });

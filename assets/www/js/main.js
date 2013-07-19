@@ -4,6 +4,9 @@ require.config({
         'jquery': {
             'exports': 'jQuery'
         },
+        'underscore': {
+            'exports': '_'
+        },
         'backbone': {
             'deps': [ 'underscore', 'jquery' ],
             'exports': 'Backbone'
@@ -36,11 +39,18 @@ require.config({
         'contact': 'controllers/contact',
         'gallery': 'controllers/gallery',
         'history': 'controllers/history',
-        'home': 'controllers/home',
         'weather': 'controllers/weather',
 
         //views
         'homeView': 'views/homeView',
+        'feedView': 'views/feedView',
+
+        //models
+        'feedModel': 'models/feedModel',
+        'newsModel': 'models/newsModel',
+
+        //collections
+        'feedsCollection': 'collections/feedsCollection',
 
         //helpers
         'content': 'helpers/content'
@@ -48,7 +58,7 @@ require.config({
      }
 });
 
-require([ 'jquery', 'backbone', 'appRouter' ], function( $, Backbone, AppRouter ) {
+require([ 'jquery', 'underscore', 'backbone', 'appRouter' ], function( $, _, Backbone, AppRouter ) {
 
     $( document ).on( 'mobileinit',
         // Set up the "mobileinit" handler before requiring jQuery Mobile's module
