@@ -9,43 +9,28 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
         initialize: function() {
             $(this.el).empty();
 
-            // this.collection = new FeedsCollection();
-            // this.collection.bind('all', this.render, this);
-            // this.collection.fetch({ dataType: 'jsonp'});
-
-            // this.collection = new FeedsCollection();
-            // this.collection.fetch({ dataType: 'jsonp'});
-            // console.log(this.collection);
-            // this.render();
-
             this.collection = new FeedsCollection();
+            this.collection.on('sync', this.render, this);
             this.collection.fetch();
-            console.log(this.collection);
-            this.render();
 
-            // var feed1 = new Feed({ id: '1', title: 'pippo', description: "How Bizarre1"});
-            // var feed2 = new Feed({ id: '2', title: 'pluto', description: "How Bizarre2"});
-            // this.collection2 = new FeedsCollection([feed1, feed2]);
-            // console.log(this.collection2);
-            // this.render();
         },
 
         // Renders all of the Category models on the UI
         render: function() {
 
             var items = [];
-
-            _.each(this.collection, function (id,feed) {
+            _.each(this.collection.models, function(model) {
+                feed = model.toJSON();
                 items.push('<li class="feed-button" id="feed-' + feed.id + '"><a data-id="' + feed.id + '" href="#">' + feed.title + '</a></li>');
             });
-            console.log(items);
-            /*$('<ul/>', {
+
+            $('<ul/>', {
                 'data-role' : 'listview',
                 'data-inset' : 'true',
                 'class' : 'dynamic',
                 html: items.join('')
             }).appendTo(this.el);
-            $('ul.dynamic').listview();*/
+            $('ul.dynamic').listview();
         }
 
     });
