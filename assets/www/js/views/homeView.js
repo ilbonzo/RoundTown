@@ -8,17 +8,12 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
         // The View Constructor
         initialize: function() {
             $(this.el).empty();
-
             content.setTitle();
-
             this.render();
         },
 
         // Renders all of the Category models on the UI
         render: function() {
-
-            //this.FeedsCollection = new FeedsCollection();
-
             $(this.el).append('<div id="tag0"></div>');
             this.loadByTag(config.tags[0], '#tag0');
             $(this.el).append('<div id="tag1"></div>');

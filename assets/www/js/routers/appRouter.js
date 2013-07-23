@@ -1,4 +1,15 @@
-define(['jquery', 'backbone', 'homeView', 'feedView'], function( $, Backbone, HomeView, FeedView ) {
+define([
+    'jquery',
+    'backbone',
+    'feedView',
+    'historyView',
+    'homeView'
+    ], function(
+        $,
+        Backbone,
+        FeedView,
+        HistoryView,
+        HomeView) {
 
         // Extends Backbone.Router
         var AppRouter = Backbone.Router.extend( {
@@ -40,6 +51,10 @@ define(['jquery', 'backbone', 'homeView', 'feedView'], function( $, Backbone, Ho
         },
 
         history: function() {
+            $.mobile.loading('show');
+            console.log('History');
+            var history = new HistoryView();
+            $.mobile.loading('hide');
 
         },
 

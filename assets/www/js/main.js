@@ -35,15 +35,14 @@ require.config({
         'appRouter': 'routers/appRouter',
 
         //controllers
-        'feed': 'controllers/feed',
         'contact': 'controllers/contact',
         'gallery': 'controllers/gallery',
-        'history': 'controllers/history',
         'weather': 'controllers/weather',
 
         //views
-        'homeView': 'views/homeView',
         'feedView': 'views/feedView',
+        'historyView': 'views/historyView',
+        'homeView': 'views/homeView',
 
         //models
         'feedModel': 'models/feedModel',

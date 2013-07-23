@@ -8,7 +8,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
         // The View Constructor
         initialize: function() {
             $(this.el).empty();
-
+            content.setTitle('News');
             this.collection = new FeedsCollection();
             this.collection.on('sync', this.render, this);
             this.collection.fetch();

@@ -1,6 +1,6 @@
-define(['jquery', 'jquerymobile', 'config', 'content', 'history', 'weather', 'klass', 'photoswipe', 'gallery', 'contact'],
+define(['jquery'],
 
-    function($,jquerymobile, config, content, history, weather, klass, photoswipe, gallery, contact) {
+    function($) {
 
         return {
             start: function () {
@@ -10,27 +10,6 @@ define(['jquery', 'jquerymobile', 'config', 'content', 'history', 'weather', 'kl
                 $('#panel-nav a').on('click', function () {
                     $('#panel-nav').panel('close');
                 });
-
-                //$('#news').on('click', function (){
-                //    content.removeAll();
-                //    for(var i in config.tags) {
-                //        feed.loadByTag(config.tags[i],'#content');
-                //    }
-                //    content.setTitle('News');
-                //});
-
-                //$('#history').on('click', function (){
-                //    content.removeAll();
-                //    history.load();
-                //    content.setTitle('Storia');
-                //});
-
-                //$(document).on('click', '.feed-button a', function () {
-                //    content.removeAll();
-                //    id = $(this).data('id');
-                //    f = feed.get(id);
-                //    content.setTitle($(this).text());
-                //});
 
                 //$('#gallery').on('click', function (){
                 //    content.removeAll();
