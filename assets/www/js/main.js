@@ -41,6 +41,7 @@ require.config({
 
         //views
         'feedView': 'views/feedView',
+        'galleryView': 'views/galleryView',
         'historyView': 'views/historyView',
         'homeView': 'views/homeView',
 

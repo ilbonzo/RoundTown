@@ -2,12 +2,14 @@ define([
     'jquery',
     'backbone',
     'feedView',
+    'galleryView',
     'historyView',
     'homeView'
     ], function(
         $,
         Backbone,
         FeedView,
+        GalleryView,
         HistoryView,
         HomeView) {
 
@@ -18,6 +20,7 @@ define([
         initialize: function() {
             // Tells Backbone to start watching for hashchange events
             Backbone.history.start();
+            $('#startOverlay').remove();
         },
 
         // Backbone.js Routes
@@ -55,11 +58,13 @@ define([
             console.log('History');
             var history = new HistoryView();
             $.mobile.loading('hide');
-
         },
 
         gallery: function() {
-
+            $.mobile.loading('show');
+            console.log('gallery');
+            var gallery = new GalleryView();
+            $.mobile.loading('hide');
         }
 
     });
