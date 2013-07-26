@@ -3,7 +3,8 @@ define(['underscore', 'backbone'], function(_, Backbone) {
     var News = Backbone.Model.extend({
         defaults: {
             title: '',
-            description: ''
+            description: '',
+            url: ''
         },
         initialize: function(){
             console.log('initialize NewsModel');

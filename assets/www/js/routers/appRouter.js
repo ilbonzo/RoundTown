@@ -2,6 +2,7 @@ define([
     'jquery',
     'backbone',
     'feedView',
+    'feedListView',
     'galleryView',
     'historyView',
     'homeView'
@@ -9,6 +10,7 @@ define([
         $,
         Backbone,
         FeedView,
+        FeedListView,
         GalleryView,
         HistoryView,
         HomeView) {
@@ -27,8 +29,8 @@ define([
         routes: {
             // When there is no hash bang on the url, the home method is called
             '': 'home',
-            'feed': 'feed',
-            'news?:id': 'news',
+            'feed/:id': 'feed',
+            'feedlist': 'feedlist',
             'history': 'history',
             'gallery': 'gallery'
         },
@@ -37,34 +39,33 @@ define([
         home: function() {
             $.mobile.loading('show');
             var home = new HomeView();
-            $.mobile.loading('hide');
         },
 
-        feed: function() {
+        feed: function(id) {
             $.mobile.loading('show');
-            console.log('Feed');
-            var feed = new FeedView();
-            $.mobile.loading('hide');
+            console.log('Feed' + id);
+            var feed = new FeedView({feedId: 'IDIDDIID'});
+            console.log(feed.feedId);
+            console.log(feed.el);
+
         },
 
-        news: function(id) {
+        feedlist: function() {
             $.mobile.loading('show');
-            console.log('News ' + id);
-            $.mobile.loading('hide');
+            console.log('FeedList');
+            var feedlist = new FeedListView();
         },
 
         history: function() {
             $.mobile.loading('show');
             console.log('History');
             var history = new HistoryView();
-            $.mobile.loading('hide');
         },
 
         gallery: function() {
             $.mobile.loading('show');
             console.log('gallery');
             var gallery = new GalleryView();
-            $.mobile.loading('hide');
         }
 
     });

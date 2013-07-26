@@ -1,37 +1,55 @@
-define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'feedsCollection' ], function($, _, Backbone, config, content, Feed, FeedsCollection) {
+define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _, Backbone, config, content) {
 
     // Extends Backbone.Viewi
     var FeedView = Backbone.View.extend( {
 
-        el: $('#content'),
+        //my param
+        //feedId: '',
+
+        // Cache the template function for a single item.
+        feedTemplate: _.template('Feed Template Start'),
+
+        //el: $('#content'),
+        tagName: 'ul',
+        className: 'feeds',
+        id: 'feedView',
+
 
         // The View Constructor
         initialize: function() {
-            $(this.el).empty();
-            content.setTitle('News');
-            this.collection = new FeedsCollection();
-            this.collection.on('sync', this.render, this);
-            this.collection.fetch();
-
+            //this.on('render', this.afterRender);
+            $('#content').empty();
+            console.log('in feedview' + this.feedId);
+            console.log(this.el);
+            //this.render();
         },
 
         // Renders all of the Category models on the UI
         render: function() {
+            //this.trigger('render');
+            content.setTitle('');
+        },
 
-            var items = [];
-            _.each(this.collection.models, function(model) {
-                feed = model.toJSON();
-                items.push('<li class="feed-button" id="feed-' + feed.id + '"><a data-id="' + feed.id + '" href="#">' + feed.title + '</a></li>');
+        get: function (id) {
+            $.getJSON('http://'+config.url+'/feeds/' + id + '?callback=?', function (news) {
+                var items = [];
+                $.each(news, function (key, n) {
+                    items.push('<div data-role="collapsible"  data-collapsed="true" class="news-button">\
+                        <h3 class="ui-collapsible-heading">' + n.title + '</h3>\
+                        <time>' + n.date + '</time>\
+                        <p>' + n.description + '</p>\
+                        <footer><a href="' + n.link +'">fonte</a> | <author>' + n.author + '</author></footer>\
+                        </div>');
+                });
+                $('<div/>', {
+                    'data-role' : 'collapsible-set',
+                    'data-content-theme' : 'd',
+                    'class' : 'dynamic newsItem',
+                    html: items.join('')
+                }).appendTo('#content');
+                $('#content').find(":jqmData(role=collapsible)").collapsible();
             });
-
-            $('<ul/>', {
-                'data-role' : 'listview',
-                'data-inset' : 'true',
-                'class' : 'dynamic',
-                html: items.join('')
-            }).appendTo(this.el);
-            $('ul.dynamic').listview();
-        }
+        },
 
     });
 

@@ -7,6 +7,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'photoswipe' ],
 
         // The View Constructor
         initialize: function() {
+            this.on('render', this.afterRender);
             $(this.el).empty();
             content.setTitle('Immagini');
             this.render();
@@ -14,6 +15,8 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'photoswipe' ],
 
         // Renders all of the Category models on the UI
         render: function() {
+            this.trigger('render');
+
             $.getJSON('http://'+config.url+'/images?callback=?', function (photos) {
                 var items = [];
                 $.each(photos, function (key, image) {
@@ -31,6 +34,10 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'photoswipe' ],
 
             });
 
+        },
+
+        afterRender: function() {
+            $.mobile.loading('hide');
         }
 
     });

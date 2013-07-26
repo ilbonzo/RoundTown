@@ -6,8 +6,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
             title: '',
             url: '',
             tag: ''
-        },
-
+        }
     });
 
     // Returns the Model class
