@@ -7,7 +7,7 @@ define(['underscore', 'backbone'], function(_, Backbone) {
             url: ''
         },
         initialize: function(){
-            console.log('initialize NewsModel');
+            //
         }
     });
 

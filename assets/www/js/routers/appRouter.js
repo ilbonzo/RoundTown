@@ -43,28 +43,21 @@ define([
 
         feed: function(id) {
             $.mobile.loading('show');
-            console.log('Feed' + id);
-            var feed = new FeedView({feedId: 'IDIDDIID'});
-            console.log(feed.feedId);
-            console.log(feed.el);
-
+            var feed = new FeedView({feedId: id});
         },
 
         feedlist: function() {
             $.mobile.loading('show');
-            console.log('FeedList');
             var feedlist = new FeedListView();
         },
 
         history: function() {
             $.mobile.loading('show');
-            console.log('History');
             var history = new HistoryView();
         },
 
         gallery: function() {
             $.mobile.loading('show');
-            console.log('gallery');
             var gallery = new GalleryView();
         }
 

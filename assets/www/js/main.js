@@ -4,6 +4,9 @@ require.config({
         'jquery': {
             'exports': 'jQuery'
         },
+        'jqueryjsonp': {
+            'deps': [ 'jquery' ]
+        },
         'underscore': {
             'exports': '_'
         },
@@ -25,6 +28,7 @@ require.config({
 
         //libs
         'jquery': 'libs/jquery-1.9.1',
+        'jqueryjsonp': 'libs/jquery.jsonp',
         'underscore': 'libs/underscore',
         'backbone': 'libs/backbone',
         'jquerymobile': 'libs/jquery.mobile-1.3.1',
@@ -59,7 +63,7 @@ require.config({
      }
 });
 
-require([ 'jquery', 'underscore', 'backbone', 'appRouter' ], function( $, _, Backbone, AppRouter ) {
+require([ 'jquery', 'jqueryjsonp', 'underscore', 'backbone', 'appRouter' ], function( $, jqueryjsonp, _, Backbone, AppRouter ) {
 
     $( document ).on( 'mobileinit',
         // Set up the "mobileinit" handler before requiring jQuery Mobile's module
@@ -74,7 +78,8 @@ require([ 'jquery', 'underscore', 'backbone', 'appRouter' ], function( $, _, Bac
 
     require( ['jquerymobile'], function() {
         // Instantiates a new Backbone.js Mobile Router
-        this.router = new AppRouter();
+        // this.router = new AppRouter();
+        window.appRouter = new AppRouter();
     });
 
     require(['app','photoswipe']);

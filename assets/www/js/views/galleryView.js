@@ -17,23 +17,29 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'photoswipe' ],
         render: function() {
             this.trigger('render');
 
-            $.getJSON('http://'+config.url+'/images?callback=?', function (photos) {
-                var items = [];
-                $.each(photos, function (key, image) {
-                    items.push('<li><a href="' + image.url + '"  rel="external"><img src="' + image.url_thumb + '" alt="' + image.user + '"/></a></li>');
-                });
-                $('<ul/>', {
-                    'class' : 'gallery dynamic photoItem',
-                    html: items.join('')
-                }).appendTo('#content');
+            $.ajax({
+                url: 'http://'+config.url+'/images?callback=?',
+                type: 'GET',
+                dataType: 'jsonp',
+                success: function (photos) {
+                    var items = [];
+                    $.each(photos, function (key, image) {
+                        items.push('<li><a href="' + image.url + '"  rel="external"><img src="' + image.url_thumb + '" alt="' + image.user + '"/></a></li>');
+                    });
+                    $('<ul/>', {
+                        'class' : 'gallery dynamic photoItem',
+                        html: items.join('')
+                    }).appendTo('#content');
 
-                $('.gallery a').photoSwipe({
-                    enableMouseWheel: true,
-                    enableKeyboard: true
-                });
+                    $('.gallery a').photoSwipe({
+                        enableMouseWheel: true,
+                        enableKeyboard: true
+                    });
+                },
+                error: function () {
 
+                }
             });
-
         },
 
         afterRender: function() {

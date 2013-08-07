@@ -23,7 +23,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
             var items = [];
             _.each(this.collection.models, function(model) {
                 feed = model.toJSON();
-                items.push('<li class="feed-button" id="feed-' + feed.id + '"><a data-id="' + feed.id + '" href="#feed?' + feed.id + '">' + feed.title + '</a></li>');
+                items.push('<li class="feed-button" id="feed-' + feed.id + '"><a class="setTitle" data-id="' + feed.id + '" data-title="' + feed.title + '" href="#feed/' + feed.id + '">' + feed.title + '</a></li>');
             });
 
             $('<ul/>', {

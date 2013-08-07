@@ -20,8 +20,9 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
         },
 
         wikipediaHTMLResult: function(data) {
-            console.log(data.parse.text["*"]);
-            $('#content').append(data.parse.text["*"]);
+            $('#content').append('<div id="historyContent">' + data.parse.text["*"] + '</div>');
+            $('#historyContent a').removeAttr('href').css('cursor','default');
+            $('.icona_del_titolo').remove();
         },
 
         afterRender: function() {
