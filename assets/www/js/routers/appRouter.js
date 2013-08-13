@@ -5,7 +5,10 @@ define([
     'feedListView',
     'galleryView',
     'historyView',
-    'homeView'
+    'homeView',
+    'placeView',
+    'placeImagesView',
+    'placeListView'
     ], function(
         $,
         Backbone,
@@ -13,7 +16,10 @@ define([
         FeedListView,
         GalleryView,
         HistoryView,
-        HomeView) {
+        HomeView,
+        PlaceView,
+        PlaceImagesView,
+        PlaceListView) {
 
         // Extends Backbone.Router
         var AppRouter = Backbone.Router.extend( {
@@ -32,7 +38,10 @@ define([
             'feed/:id': 'feed',
             'feedlist': 'feedlist',
             'history': 'history',
-            'gallery': 'gallery'
+            'gallery': 'gallery',
+            'place/:id': 'place',
+            'place/:id/images': 'placeimages',
+            'placelist': 'placelist'
         },
 
         // Home method
@@ -59,7 +68,22 @@ define([
         gallery: function() {
             $.mobile.loading('show');
             var gallery = new GalleryView();
-        }
+        },
+
+        place: function(id) {
+            $.mobile.loading('show');
+            var place = new PlaceView({placeId: id});
+        },
+
+        placeimages: function(id) {
+            $.mobile.loading('show');
+            var placeimage = new PlaceImagesView({placeId: id});
+        },
+
+        placelist: function() {
+            $.mobile.loading('show');
+            var placelist = new PlaceListView();
+        },
 
     });
 

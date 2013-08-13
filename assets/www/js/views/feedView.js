@@ -3,13 +3,8 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
     // Extends Backbone.Viewi
     var FeedView = Backbone.View.extend( {
 
-        //my param
-        //feedId: '',
+        el: '#content',
 
-        // Cache the template function for a single item.
-        feedTemplate: _.template('Feed Template Start'),
-
-        //el: $('#content'),
         tagName: 'ul',
         className: 'feeds',
         id: 'feedView',
@@ -18,7 +13,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
         // The View Constructor
         initialize: function(options) {
             this.on('render', this.afterRender);
-            $('#content').empty();
+            this.$el.empty();
             this.render(options);
         },
 

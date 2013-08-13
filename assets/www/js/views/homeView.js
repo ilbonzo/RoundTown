@@ -27,7 +27,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
         loadByTag: function (tag,elToAppend) {
             $.getJSON('http://'+config.url+'/feeds?tag=' + tag + '&callback=?', function (feeds) {
                 var items = [];
-                items.push('<li data-role="list-divider" role="heading" data-theme="d">'+ tag + '</li>');
+                items.push('<li data-role="list-divider" role="heading" data-theme="a">'+ tag + '</li>');
                 $.each(feeds, function (key, feed) {
                     items.push('<li class="feed-button" id="feed-' + feed.id + '"><a class="setTitle" data-id="' + feed.id + '" data-title="' + feed.title + '"  href="#feed/' + feed.id + '">' + feed.title + '</a></li>');
                 });

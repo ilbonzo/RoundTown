@@ -1,7 +1,7 @@
-define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'feedsCollection' ], function($, _, Backbone, config, content, Feed, FeedsCollection) {
+define(['jquery', 'underscore', 'backbone', 'config', 'content', 'placeModel', 'placesCollection' ], function($, _, Backbone, config, content, Place, PlacesCollection) {
 
     // Extends Backbone.Viewi
-    var FeedListView = Backbone.View.extend( {
+    var PlaceListView = Backbone.View.extend( {
 
         el: '#content',
 
@@ -9,20 +9,22 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
         initialize: function() {
             this.on('render', this.afterRender);
             this.$el.empty();
-            content.setTitle('News');
+            content.setTitle('Luoghi');
 
-            this.collection = new FeedsCollection();
+            this.collection = new PlacesCollection();
             this.collection.on('sync', this.render, this);
             this.collection.fetch();
-
         },
 
         // Renders all of the Category models on the UI
         render: function() {
             var items = [];
             _.each(this.collection.models, function(model) {
-                feed = model.toJSON();
-                items.push('<li class="feed-button" id="feed-' + feed.id + '"><a class="setTitle" data-id="' + feed.id + '" data-title="' + feed.title + '" href="#feed/' + feed.id + '">' + feed.title + '</a></li>');
+                place= model.toJSON();
+                /*jshint multistr: true */
+                items.push('<li class="place-button" id="place-' + place.id + '">\
+                    <a class="setTitle" data-id="' + place.id + '" data-title="' + place.name + '" href="#place/' + place.id + '">' + place.name + '</a>\
+                    </li>');
             });
 
             $('<ul/>', {
@@ -32,7 +34,8 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
                 html: items.join('')
             }).appendTo(this.el);
             $('ul.dynamic').listview();
-            this.trigger('render');
+            $.mobile.loading('hide');
+
         },
 
         afterRender: function() {
@@ -42,6 +45,6 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
     });
 
     // Returns the View class
-    return FeedListView;
+    return PlaceListView;
 
 });

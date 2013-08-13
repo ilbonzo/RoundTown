@@ -31,7 +31,7 @@ require.config({
         'jqueryjsonp': 'libs/jquery.jsonp',
         'underscore': 'libs/underscore',
         'backbone': 'libs/backbone',
-        'jquerymobile': 'libs/jquery.mobile-1.3.1',
+        'jquerymobile': 'libs/jquery.mobile-1.3.2',
         'klass': 'libs/klass.min',
         'photoswipe': 'libs/code.photoswipe.jquery-3.0.5',
 
@@ -39,8 +39,6 @@ require.config({
         'appRouter': 'routers/appRouter',
 
         //controllers
-        'contact': 'controllers/contact',
-        'gallery': 'controllers/gallery',
         'weather': 'controllers/weather',
 
         //views
@@ -49,13 +47,18 @@ require.config({
         'galleryView': 'views/galleryView',
         'historyView': 'views/historyView',
         'homeView': 'views/homeView',
+        'placeView': 'views/placeView',
+        'placeImagesView': 'views/placeImagesView',
+        'placeListView': 'views/placeListView',
 
         //models
         'feedModel': 'models/feedModel',
         'newsModel': 'models/newsModel',
+        'placeModel': 'models/placeModel',
 
         //collections
         'feedsCollection': 'collections/feedsCollection',
+        'placesCollection': 'collections/placesCollection',
 
         //helpers
         'content': 'helpers/content'

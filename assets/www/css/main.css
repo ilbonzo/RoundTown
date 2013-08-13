@@ -52,3 +52,7 @@
 .news-button {
     word-wrap: break-word;
 }
+
+.dynamic {
+    overflow: hidden;
+}

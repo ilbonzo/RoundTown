@@ -6,15 +6,17 @@
     <meta name="format-detection" content="telephone=no" />
     <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.3.1.css" />
+    <link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.3.2.css" />
     <link rel="stylesheet"  href="css/photoswipe/photoswipe.css" />
+    <link rel="stylesheet"  href="css/themes/default/roundtown.css" />
     <link rel="stylesheet"  href="css/main.css" />
   </head>
   <body>
-  <div data-role="page" data-theme="d" id="index">
+  <div data-role="page" data-theme="a" id="index">
     <div data-role="panel" id="panel-nav" data-position="left" data-display="push">
       <ul data-role="listview">
         <li><a id="news" href="#feedlist">News</a></li>
+        <li><a id="place" href="#placelist">Luoghi</a></li>
         <li><a id="history" href="#history">Storia</a></li>
         <li><a id="gallery" href="#gallery">Immagini</a></li>
       </ul>
@@ -30,8 +32,8 @@
 
         <div class="app">
             <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+                <!-- <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p> -->
             </div>
         </div>
 
@@ -40,7 +42,7 @@
     <div data-role="footer" data-position="fixed">
       <div data-role="navbar">
         <ul>
-          <li><a data-icon="star" href="mailto:sanzvan@magni.me">Contattaci</a></li>
+          <li><a data-icon="edit" href="mailto:sanzvan@magni.me">Contattaci</a></li>
           <li><a data-icon="star" href="http://magni.me">Credits</a></li>
         </ul>
       </div><!-- /navbar -->
