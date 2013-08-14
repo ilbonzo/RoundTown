@@ -11,6 +11,9 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'tweetModel', '
             this.$el.empty();
             content.setTitle('Tweets');
             content.hideSubTitle();
+            content.hideRightButton();
+            content.hideFeedTagMenu();
+            content.hidePlaceTagMenu();
 
             this.collection = new TweetsCollection();
             this.collection.on('sync', this.render, this);

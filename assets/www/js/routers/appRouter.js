@@ -39,11 +39,13 @@ define([
             '': 'home',
             'feed/:id': 'feed',
             'feedlist': 'feedlist',
+            'feedlist/:tag': 'feedlistbytag',
             'history': 'history',
             'gallery': 'gallery',
             'place/:id': 'place',
             'place/:id/images': 'placeimages',
             'placelist': 'placelist',
+            'placelist/:tag': 'placelisttag',
             'tweetlist': 'tweetlist'
         },
 
@@ -61,6 +63,11 @@ define([
         feedlist: function() {
             $.mobile.loading('show');
             var feedlist = new FeedListView();
+        },
+
+        feedlistbytag: function(tag) {
+            $.mobile.loading('show');
+            var feedlist = new FeedListView({'tag': tag});
         },
 
         history: function() {
@@ -86,6 +93,11 @@ define([
         placelist: function() {
             $.mobile.loading('show');
             var placelist = new PlaceListView();
+        },
+
+        placelisttag: function(tag) {
+            $.mobile.loading('show');
+            var placelist = new PlaceListView({'tag': tag});
         },
 
         tweetlist: function() {

@@ -6,15 +6,27 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
         el: '#content',
 
         // The View Constructor
-        initialize: function() {
+        initialize: function(options) {
             this.on('render', this.afterRender);
             this.$el.empty();
+            content.showRightButton();
+            content.showFeedTagMenu();
+            content.hidePlaceTagMenu();
             content.setTitle('News');
-            content.hideSubTitle();
+            if (typeof options === 'undefined') {
+                content.hideSubTitle();
+                var searchParams = {};
+            } else {
+                content.showSubTitle();
+                var searchParams = {
+                  'tag': options.tag
+                };
+            }
 
             this.collection = new FeedsCollection();
             this.collection.on('sync', this.render, this);
-            this.collection.fetch();
+
+            this.collection.fetch({data: $.param(searchParams)});
 
         },
 

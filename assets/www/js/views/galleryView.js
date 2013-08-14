@@ -11,6 +11,9 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'photoswipe' ],
             $(this.el).empty();
             content.setTitle('Immagini');
             content.hideSubTitle();
+            content.hideRightButton();
+            content.hideFeedTagMenu();
+            content.hidePlaceTagMenu();
             this.render();
         },
 

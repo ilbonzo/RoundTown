@@ -11,6 +11,9 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
             $(this.el).empty();
             content.setTitle('Storia');
             content.hideSubTitle();
+            content.hideRightButton();
+            content.hideFeedTagMenu();
+            content.hidePlaceTagMenu();
             this.render();
         },
 

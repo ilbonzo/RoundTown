@@ -13,7 +13,7 @@
   </head>
   <body>
   <div data-role="page" data-theme="a" id="index">
-    <div data-role="panel" id="panel-nav" data-position="left" data-display="push">
+    <div data-role="panel" id="panel-nav" data-position="left" data-display="push" data-position-fixed="true">
       <ul data-role="listview">
         <li><a id="home" href="#">Home</a></li>
         <li><a id="news" href="#feedlist">News</a></li>
@@ -23,11 +23,19 @@
         <li><a id="gallery" href="#gallery">Immagini</a></li>
       </ul>
     </div><!-- /panel -->
+    <div data-role="panel" id="sec-panel-nav" data-position="right" data-display="overlay" data-position-fixed="true">
+      <ul class="categoryFeed" data-role="listview">
+        <li><a data-rel="close" class="ui-icon-arrow-l">Chiudi</a></li>
+      </ul>
+      <br/>
+      <br/>
+    </div><!-- /panel -->
+
 
     <div data-role="header"  data-position="fixed">
       <h1 id="title">San Zvan</h1>
       <a href="#panel-nav" data-icon="bars" data-iconpos="notext">Navigation</a>
-      <a id="home" href="#" data-icon="home" data-iconpos="notext">Home</a>
+      <a id="right-button" href="#sec-panel-nav" data-icon="grid" data-iconpos="notext" data-role="button">Sub Navigation</a>
     </div><!-- /header -->
 
     <div id="container" data-role="content">

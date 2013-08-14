@@ -9,6 +9,9 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'placeModel', '
 
         // The View Constructor
         initialize: function(options) {
+            content.showRightButton();
+            content.hideFeedTagMenu();
+            content.showPlaceTagMenu();
             this.on('render', this.afterRender);
             this.model = new PlaceModel({id: options.placeId});
             this.model.on('sync', this.render, this);

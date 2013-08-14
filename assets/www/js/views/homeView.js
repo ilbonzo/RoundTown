@@ -11,6 +11,9 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
             $(this.el).empty();
             content.setTitle();
             content.hideSubTitle();
+            content.showRightButton();
+            content.showFeedTagMenu();
+            content.hidePlaceTagMenu();
             this.render();
         },
 

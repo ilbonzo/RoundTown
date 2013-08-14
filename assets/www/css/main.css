@@ -73,3 +73,11 @@
     text-align: center;
     margin:0px 0.4em;
 }
+
+.ui-page-active.ui-page-panel {
+    overflow: hidden;
+}
+
+#home-button {
+    display:none;
+}

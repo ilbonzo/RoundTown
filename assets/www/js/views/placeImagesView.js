@@ -10,6 +10,9 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'photoswipe' ],
             this.on('render', this.afterRender);
             $(this.el).empty();
             content.setTitle('Immagini');
+            content.showRightButton();
+            content.hideFeedTagMenu();
+            content.showPlaceTagMenu();
             this.render(options.placeId);
 
         },

@@ -6,15 +6,27 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'placeModel', '
         el: '#content',
 
         // The View Constructor
-        initialize: function() {
+        initialize: function(options) {
             this.on('render', this.afterRender);
             this.$el.empty();
             content.setTitle('Luoghi');
-            content.hideSubTitle();
+            content.showRightButton();
+            content.hideFeedTagMenu();
+            content.showPlaceTagMenu();
+
+            if (typeof options === 'undefined') {
+                content.hideSubTitle();
+                var searchParams = {};
+            } else {
+                content.showSubTitle();
+                var searchParams = {
+                  'tag': options.tag
+                };
+            }
 
             this.collection = new PlacesCollection();
             this.collection.on('sync', this.render, this);
-            this.collection.fetch();
+            this.collection.fetch({data: $.param(searchParams)});
         },
 
         // Renders all of the Category models on the UI
