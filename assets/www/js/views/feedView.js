@@ -19,8 +19,8 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
 
         // Renders all of the Category models on the UI
         render: function(options) {
-            this.trigger('render');
             this.get(options.feedId);
+            this.trigger('render');
         },
 
         get: function (id) {
@@ -44,12 +44,13 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
                         html: items.join('')
                     }).appendTo('#content');
                     $('#content').find(":jqmData(role=collapsible)").collapsible();
+                    content.showSubTitle();
                 },
 
                 error: function (jqXHR, textStatus, errorThrown) {
                     $.mobile.showPageLoadingMsg( $.mobile.pageLoadErrorMessageTheme, 'Feed non disponibile', true );
                     setTimeout( function () {
-                        window.appRouter.navigate('feedlist', {trigger: true});
+                        window.appRouter.navigate('', {trigger: true});
                     },2000);
 
                 }

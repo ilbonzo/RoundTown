@@ -15,35 +15,41 @@
   <div data-role="page" data-theme="a" id="index">
     <div data-role="panel" id="panel-nav" data-position="left" data-display="push">
       <ul data-role="listview">
+        <li><a id="home" href="#">Home</a></li>
         <li><a id="news" href="#feedlist">News</a></li>
         <li><a id="place" href="#placelist">Luoghi</a></li>
+        <li><a id="tweet" href="#tweetlist">Tweets</a></li>
         <li><a id="history" href="#history">Storia</a></li>
         <li><a id="gallery" href="#gallery">Immagini</a></li>
       </ul>
     </div><!-- /panel -->
 
-    <div data-role="header">
+    <div data-role="header"  data-position="fixed">
       <h1 id="title">San Zvan</h1>
       <a href="#panel-nav" data-icon="bars" data-iconpos="notext">Navigation</a>
       <a id="home" href="#" data-icon="home" data-iconpos="notext">Home</a>
     </div><!-- /header -->
 
-    <div id="content" data-role="content">
+    <div id="container" data-role="content">
+      <h2 id="subTitle"></h2>
+      <div id="content">
 
-        <div class="app">
-            <div id="deviceready" class="blink">
-                <!-- <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p> -->
-            </div>
-        </div>
+          <div class="app">
+              <div id="deviceready" class="blink">
+                  <!-- <p class="event listening">Connecting to Device</p>
+                  <p class="event received">Device is Ready</p> -->
+              </div>
+          </div>
 
-    </div><!-- /content -->
+      </div><!-- /content -->
+    </div>
 
     <div data-role="footer" data-position="fixed">
       <div data-role="navbar">
         <ul>
-          <li><a data-icon="edit" href="mailto:sanzvan@magni.me">Contattaci</a></li>
-          <li><a data-icon="star" href="http://magni.me">Credits</a></li>
+          <li id="backButton"><a data-icon="back" href="#" data-iconpos="notext">Back</a></li>
+          <li><a data-icon="edit" href="mailto:sanzvan@magni.me" data-iconpos="notext">Contattaci</a></li>
+          <li><a data-icon="star" href="http://magni.me" data-iconpos="notext">Credits</a></li>
         </ul>
       </div><!-- /navbar -->
     </div>

@@ -2,9 +2,9 @@
 <div>
     <br/>
     <ul data-role="listview" class="dynamic">
-        <li>
+        <li class="imagesLink">
             <% if (place.image) { %>
-                <a href="#place/<%= place.id %>/images" data-title="Immagini <%= place.name %>" class="setTitle">
+                <a href="#place/<%= place.id %>/images" data-title="<%= place.name %>" class="setSubTitle">
                 <img src="<%= place.image %>"/>
             <%  } %>
             <h2><%= place.name %></h2>

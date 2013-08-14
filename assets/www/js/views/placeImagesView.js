@@ -9,7 +9,9 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'photoswipe' ],
         initialize: function(options) {
             this.on('render', this.afterRender);
             $(this.el).empty();
+            content.setTitle('Immagini');
             this.render(options.placeId);
+
         },
 
         // Renders all of the Category models on the UI
@@ -29,6 +31,8 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'photoswipe' ],
                         'class' : 'gallery dynamic photoItem',
                         html: items.join('')
                     }).appendTo('#content');
+
+                    content.showSubTitle();
 
                     $('.gallery a').photoSwipe({
                         enableMouseWheel: true,

@@ -10,6 +10,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'placeModel', '
             this.on('render', this.afterRender);
             this.$el.empty();
             content.setTitle('Luoghi');
+            content.hideSubTitle();
 
             this.collection = new PlacesCollection();
             this.collection.on('sync', this.render, this);
@@ -23,7 +24,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'placeModel', '
                 place= model.toJSON();
                 /*jshint multistr: true */
                 items.push('<li class="place-button" id="place-' + place.id + '">\
-                    <a class="setTitle" data-id="' + place.id + '" data-title="' + place.name + '" href="#place/' + place.id + '">' + place.name + '</a>\
+                    <a data-id="' + place.id + '" data-title="' + place.name + '" href="#place/' + place.id + '">' + place.name + '</a>\
                     </li>');
             });
 
@@ -34,7 +35,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'placeModel', '
                 html: items.join('')
             }).appendTo(this.el);
             $('ul.dynamic').listview();
-            $.mobile.loading('hide');
+            this.trigger('render');
 
         },
 

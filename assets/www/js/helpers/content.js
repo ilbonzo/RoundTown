@@ -8,6 +8,16 @@ define([], function() {
                 title = 'San Zvan';
             }
             $('#title').html(title);
+        },
+        setSubTitle: function (subTitle) {
+            $('#subTitle').html(subTitle);
+        },
+        showSubTitle: function() {
+            $('#subTitle').show();
+        },
+        hideSubTitle: function () {
+            $('#subTitle').html('');
+            $('#subTitle').hide();
         }
     }
 });

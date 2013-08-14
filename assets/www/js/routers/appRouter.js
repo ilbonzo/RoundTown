@@ -8,7 +8,8 @@ define([
     'homeView',
     'placeView',
     'placeImagesView',
-    'placeListView'
+    'placeListView',
+    'tweetListView'
     ], function(
         $,
         Backbone,
@@ -19,7 +20,8 @@ define([
         HomeView,
         PlaceView,
         PlaceImagesView,
-        PlaceListView) {
+        PlaceListView,
+        TweetListView) {
 
         // Extends Backbone.Router
         var AppRouter = Backbone.Router.extend( {
@@ -41,7 +43,8 @@ define([
             'gallery': 'gallery',
             'place/:id': 'place',
             'place/:id/images': 'placeimages',
-            'placelist': 'placelist'
+            'placelist': 'placelist',
+            'tweetlist': 'tweetlist'
         },
 
         // Home method
@@ -84,6 +87,11 @@ define([
             $.mobile.loading('show');
             var placelist = new PlaceListView();
         },
+
+        tweetlist: function() {
+            $.mobile.loading('show');
+            var tweetlist = new TweetListView();
+        }
 
     });
 

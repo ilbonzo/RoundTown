@@ -56,3 +56,20 @@
 .dynamic {
     overflow: hidden;
 }
+
+.tweet-button .userTweet{
+    float: right;
+}
+
+.tweet-button .ui-li-desc {
+    white-space: normal;
+}
+
+.imagesLink .ui-li-heading {
+    white-space: normal;
+}
+
+#subTitle {
+    text-align: center;
+    margin:0px 0.4em;
+}

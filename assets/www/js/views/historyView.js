@@ -10,6 +10,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
             this.on('render', this.afterRender);
             $(this.el).empty();
             content.setTitle('Storia');
+            content.hideSubTitle();
             this.render();
         },
 

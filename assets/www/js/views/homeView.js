@@ -10,6 +10,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
             this.on('render', this.afterRender);
             $(this.el).empty();
             content.setTitle();
+            content.hideSubTitle();
             this.render();
         },
 
@@ -22,6 +23,10 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
             this.loadByTag(config.tags[1],'#tag1');
             $(this.el).append('<div id="tag2"></div>');
             this.loadByTag(config.tags[2],'#tag2');
+            $(this.el).append('<div id="tag3"></div>');
+            this.loadByTag(config.tags[3],'#tag3');
+            $(this.el).append('<div id="tag4"></div>');
+            this.loadByTag(config.tags[4],'#tag4');
         },
 
         loadByTag: function (tag,elToAppend) {
@@ -29,7 +34,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
                 var items = [];
                 items.push('<li data-role="list-divider" role="heading" data-theme="a">'+ tag + '</li>');
                 $.each(feeds, function (key, feed) {
-                    items.push('<li class="feed-button" id="feed-' + feed.id + '"><a class="setTitle" data-id="' + feed.id + '" data-title="' + feed.title + '"  href="#feed/' + feed.id + '">' + feed.title + '</a></li>');
+                    items.push('<li class="feed-button" id="feed-' + feed.id + '"><a class="setSubTitle" data-id="' + feed.id + '" data-title="' + feed.title + '"  href="#feed/' + feed.id + '">' + feed.title + '</a></li>');
                 });
                 $('<ul/>', {
                     'data-role' : 'listview',

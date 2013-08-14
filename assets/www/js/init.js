@@ -9,6 +9,15 @@ define(['jquery', 'content'], function($, content) {
                 $(document).on('click', '.setTitle', function () {
                     content.setTitle($(this).data('title'));
                 });
+
+                $(document).on('click', '.setSubTitle', function () {
+                    content.setSubTitle($(this).data('title'));
+                });
+
+                $(document).on('click', '#backButton a', function (e) {
+                    e.preventDefault();
+                    history.back();
+                });
             }
         }
     }

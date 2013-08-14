@@ -50,15 +50,18 @@ require.config({
         'placeView': 'views/placeView',
         'placeImagesView': 'views/placeImagesView',
         'placeListView': 'views/placeListView',
+        'tweetListView': 'views/tweetListView',
 
         //models
         'feedModel': 'models/feedModel',
         'newsModel': 'models/newsModel',
         'placeModel': 'models/placeModel',
+        'tweetModel': 'models/tweetModel',
 
         //collections
         'feedsCollection': 'collections/feedsCollection',
         'placesCollection': 'collections/placesCollection',
+        'tweetsCollection': 'collections/tweetsCollection',
 
         //helpers
         'content': 'helpers/content'
@@ -76,6 +79,9 @@ require([ 'jquery', 'jqueryjsonp', 'underscore', 'backbone', 'appRouter' ], func
 
             // Disabling this will prevent jQuery Mobile from handling hash changes
             $.mobile.hashListeningEnabled = false;
+
+            //disable ui button
+            $.mobile.activeBtnClass = 'unused';
         }
     )
 
