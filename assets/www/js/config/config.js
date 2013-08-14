@@ -1,6 +1,6 @@
 define([], function() {
     return {
-        url: 'api.sanzvan.bonzo:88/1.0',
+        url: 'api.sanzvan.it/1.0',
         wikipedia: 'San Giovanni in Persiceto',
         tags: ['Comune','Scuola','Associazioni', 'Varie', 'Musei'],
         latitude: 44.640833,
