@@ -48,3 +48,36 @@
     z-index: 1040;
     background-color: #000000;
 }
+
+.news-button {
+    word-wrap: break-word;
+}
+
+.dynamic {
+    overflow: hidden;
+}
+
+.tweet-button .userTweet{
+    float: right;
+}
+
+.tweet-button .ui-li-desc {
+    white-space: normal;
+}
+
+.imagesLink .ui-li-heading {
+    white-space: normal;
+}
+
+#subTitle {
+    text-align: center;
+    margin:0px 0.4em;
+}
+
+.ui-page-active.ui-page-panel {
+    overflow: hidden;
+}
+
+#home-button {
+    display:none;
+}

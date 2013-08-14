@@ -1,63 +1,32 @@
-define(['jquery', 'jquerymobile', 'config', 'content', 'feed', 'history', 'weather', 'home', 'klass', 'photoswipe', 'gallery', 'contact'],
-
-    function($,jquerymobile, config, content, feed, history, weather, home, klass, photoswipe, gallery, contact) {
-
+define(['jquery', 'content'], function($, content) {
         return {
             start: function () {
-                //$.support.cors = true;
-                //show content
-                content.removeAll();
-                $('#startOverlay').remove();
-                home.load();
-
                 //register event
-                $('#panel-nav a').on('click', function () {
+                $(document).on('click', '#panel-nav a', function () {
                     $('#panel-nav').panel('close');
                 });
 
-                $('#home').on('click', function () {
-                    content.removeAll();
-                    home.load();
-                    content.setTitle();
+                $(document).on('click', '#sec-panel-nav a', function () {
+                    $('#sec-panel-nav').panel('close');
                 });
 
-                $('#news').on('click', function (){
-                    content.removeAll();
-                    for(var i in config.tags) {
-                        feed.loadByTag(config.tags[i],'#content');
-                    }
-                    content.setTitle('News');
+                $(document).on('click', '.setTitle', function () {
+                    content.setTitle($(this).data('title'));
                 });
 
-                $('#history').on('click', function (){
-                    content.removeAll();
-                    history.load();
-                    content.setTitle('Storia');
+                $(document).on('click', '.setSubTitle', function () {
+                    content.setSubTitle($(this).data('title'));
                 });
 
-                $(document).on('click', '.feed-button a', function () {
-                    content.removeAll();
-                    id = $(this).data('id');
-                    f = feed.get(id);
-                    content.setTitle($(this).text());
+                $(document).on('click', '#backButton a', function (e) {
+                    e.preventDefault();
+                    history.back();
                 });
 
-                $('#gallery').on('click', function (){
-                    content.removeAll();
-                    gallery.load();
-                    content.setTitle('Immagini');
-                });
+                content.loadFeedTag();
 
-                //$('#weather').on('click', function (){
-                //    content.removeAll();
-                //    weather.load();
-                //});
+                content.loadPlaceTag();
 
-                $('#contact').on('click', function (){
-                    content.removeAll();
-                    contact.load();
-                    content.setTitle('Contatti');
-                });
             }
         }
     }

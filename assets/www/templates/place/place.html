@@ -1,0 +1,95 @@
+
+<div>
+    <br/>
+    <ul data-role="listview" class="dynamic">
+        <li class="imagesLink">
+            <% if (place.image) { %>
+                <a href="#place/<%= place.id %>/images" data-title="<%= place.name %>" class="setSubTitle">
+                <img src="<%= place.image %>"/>
+            <%  } %>
+            <h2><%= place.name %></h2>
+            <% if (place.image) { %>
+                <p>Foto</p></a>
+            <%  } %>
+        </li>
+    </ul>
+    <br/>
+    <ul data-role="listview" class="dynamic" data-inset="true">
+        <li>
+            <em>indirizzo</em>:<br/>
+            <% if (place.address) { %>
+                <%= place.address %>
+            <% } else { %>
+                N/D
+            <% } %>
+        </li>
+        <li>
+            <em>telefono</em>:<br/>
+            <% if (place.phone) { %>
+                <%= place.phone %>
+            <% } else { %>
+                N/D
+            <% } %>
+        </li>
+        <li>
+            <% if (place.twitter) { %>
+                <a href="http://twitter.com/<%= place.twitter %>" target="_blank">
+            <% } %>
+            <em>twitter</em>:<br/>
+            <% if (place.twitter) { %>
+                @<%= place.twitter %></a>
+            <% } else { %>
+                N/D
+            <% } %>
+        </li>
+        <li>
+            <% if (place.url) { %>
+                <a href="<%= place.url %>" target="_blank" >
+            <% } %>
+            <em>Sito web</em>:<br/>
+            <% if (place.url) { %>
+                <p><%= place.url %></p></a>
+            <% } else { %>
+                N/D
+            <% } %>
+        </li>
+        <li>
+            <a href="<%= place.foursquare %>" target="_blank">Foursquare</a>
+        </li>
+    </ul>
+</div>
+<br/>
+<!-- <div>
+    <ul data-role="listview" class="dynamic" >
+        <% if (place.categories) { %>
+            <li data-role="list-divider">Categorie</li>
+        <% } else { %>
+            <li data-role="list-divider">Non ci sono categorie</li>
+        <% } %>
+
+        <% _.each(place.categories, function(c) { %>
+        <li>
+            <strong><%= c.name %></strong>
+        </li>
+        <% }); %>
+    </ul>
+</div>
+<br/> -->
+<br/>
+<div>
+    <ul data-role="listview" class="dynamic" >
+        <% if (place.tips) { %>
+            <li data-role="list-divider">Suggerimenti</li>
+        <% } else { %>
+            <li data-role="list-divider">Non ci sono suggerimenti</li>
+        <% } %>
+
+        <% _.each(place.tips, function(t) { %>
+        <li>
+            <a href="<%= t.canonicalUrl %>" target="_blank" >
+            <h2><%= t.user.firstName %> <%= t.user.lastName %></h2>
+            <p><strong><%= t.text %></strong></p></a>
+        </li>
+        <% }); %>
+    </ul>
+</div>
