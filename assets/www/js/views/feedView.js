@@ -30,6 +30,11 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
                 success: function (news) {
                     var items = [];
                     $.each(news, function (key, n) {
+
+                        if (n.date === null) {
+                            n.date = '';
+                        }
+
                         /*jshint multistr: true */
                         items.push('<div data-role="collapsible"  data-collapsed="true" class="news-button">\
                             <h3 class="ui-collapsible-heading">' + n.title + '</h3>\

@@ -30,6 +30,8 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
             this.loadByTag(config.tags[3],'#tag3');
             $(this.el).append('<div id="tag4"></div>');
             this.loadByTag(config.tags[4],'#tag4');
+            $(this.el).append('<div id="tag5"></div>');
+            this.loadByTag(config.tags[5],'#tag5');
         },
 
         loadByTag: function (tag,elToAppend) {
