@@ -37,7 +37,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
                 <h2>Tweets</h2>\
                 <p>Ultimi tweet da San Giovanni</p>\
                 </a></li>');
-            items.push('<li><a href="#images">\
+            items.push('<li><a href="#gallery">\
                 <img src="img/icons/images.png">\
                 <h2>Immagini</h2>\
                 <p>Foto di San Giovanni</p>\
