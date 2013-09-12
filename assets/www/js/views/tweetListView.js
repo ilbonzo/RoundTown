@@ -27,7 +27,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'tweetModel', '
                 tweet= model.toJSON();
                 /*jshint multistr: true */
                 items.push('<li class="tweet-button" id="tweet-' + tweet.id + '">\
-                <a href="' + tweet.url + '" target="_blank">\
+                <a href="' + tweet.url + '" target="_blank" rel="external">\
                 <p>' + tweet.text + '</p>\
                 <p class="userTweet"><strong><em>@' + tweet.user + '</em></strong></p></a>\
                 </li>');

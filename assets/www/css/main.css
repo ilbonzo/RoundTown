@@ -61,7 +61,7 @@
     float: right;
 }
 
-.tweet-button .ui-li-desc {
+.tweet-button .ui-li-desc, .suggests .ui-li-desc {
     white-space: normal;
 }
 
