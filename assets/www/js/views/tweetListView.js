@@ -7,6 +7,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'tweetModel', '
 
         // The View Constructor
         initialize: function() {
+            window.scrollTo(0, 0);
             this.on('render', this.afterRender);
             this.$el.empty();
             content.setTitle('Tweets');

@@ -9,6 +9,8 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'placeModel', '
 
         // The View Constructor
         initialize: function(options) {
+            window.scrollTo(0, 0);
+            content.hideSubTitle();
             content.showRightButton();
             content.hideFeedTagMenu();
             content.showPlaceTagMenu();

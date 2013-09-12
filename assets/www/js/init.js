@@ -4,10 +4,12 @@ define(['jquery', 'content'], function($, content) {
                 //register event
                 $(document).on('click', '#panel-nav a', function () {
                     $('#panel-nav').panel('close');
+                    window.scrollTo(0, 0);
                 });
 
                 $(document).on('click', '#sec-panel-nav a', function () {
                     $('#sec-panel-nav').panel('close');
+                    window.scrollTo(0, 0);
                 });
 
                 $(document).on('click', '.setTitle', function () {

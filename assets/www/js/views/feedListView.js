@@ -7,6 +7,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
 
         // The View Constructor
         initialize: function(options) {
+            window.scrollTo(0, 0);
             this.on('render', this.afterRender);
             this.$el.empty();
             content.showRightButton();

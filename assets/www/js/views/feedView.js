@@ -11,6 +11,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
 
         // The View Constructor
         initialize: function(options) {
+            window.scrollTo(0, 0);
             this.on('render', this.afterRender);
             this.$el.empty();
             content.showFeedTagMenu();
