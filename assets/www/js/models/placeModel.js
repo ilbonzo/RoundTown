@@ -11,6 +11,7 @@ define(['underscore', 'backbone', 'config'], function(_, Backbone, config) {
             twitter: 'N/D',
             url: 'N/D',
             foursquare: '',
+            icon:'',
             categories: [],
             tips: []
         },

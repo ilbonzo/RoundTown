@@ -33,7 +33,7 @@
         </li>
         <li>
             <% if (place.twitter) { %>
-                <a href="http://twitter.com/<%= place.twitter %>" target="_blank">
+                <a href="http://twitter.com/<%= place.twitter %>" target="_blank" rel="external">
             <% } %>
             <em>twitter</em>:<br/>
             <% if (place.twitter) { %>
@@ -44,7 +44,7 @@
         </li>
         <li>
             <% if (place.url) { %>
-                <a href="<%= place.url %>" target="_blank" >
+                <a href="<%= place.url %>" target="_blank"  rel="external">
             <% } %>
             <em>Sito web</em>:<br/>
             <% if (place.url) { %>
@@ -54,7 +54,7 @@
             <% } %>
         </li>
         <li>
-            <a href="<%= place.foursquare %>" target="_blank">Foursquare</a>
+            <a href="<%= place.foursquare %>" target="_blank" rel="external">Foursquare</a>
         </li>
     </ul>
 </div>
@@ -77,7 +77,7 @@
 <br/> -->
 <br/>
 <div>
-    <ul data-role="listview" class="dynamic" >
+    <ul data-role="listview" class="dynamic suggests" >
         <% if (place.tips) { %>
             <li data-role="list-divider">Suggerimenti</li>
         <% } else { %>
@@ -86,7 +86,7 @@
 
         <% _.each(place.tips, function(t) { %>
         <li>
-            <a href="<%= t.canonicalUrl %>" target="_blank" >
+            <a href="<%= t.canonicalUrl %>" target="_blank"  rel="external">
             <h2><%= t.user.firstName %> <%= t.user.lastName %></h2>
             <p><strong><%= t.text %></strong></p></a>
         </li>

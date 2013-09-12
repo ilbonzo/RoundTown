@@ -19,34 +19,42 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
 
         // Renders all of the Category models on the UI
         render: function() {
-            this.trigger('render');
-            $(this.el).append('<div id="tag0"></div>');
-            this.loadByTag(config.tags[0], '#tag0');
-            $(this.el).append('<div id="tag1"></div>');
-            this.loadByTag(config.tags[1],'#tag1');
-            $(this.el).append('<div id="tag2"></div>');
-            this.loadByTag(config.tags[2],'#tag2');
-            $(this.el).append('<div id="tag3"></div>');
-            this.loadByTag(config.tags[3],'#tag3');
-            $(this.el).append('<div id="tag4"></div>');
-            this.loadByTag(config.tags[4],'#tag4');
-        },
+            var items = [];
+            /*jshint multistr: true */
+            items.push('<li><a href="#feedorderbytaglist">\
+                <img src="img/icons/news.png">\
+                <h2>News</h2>\
+                <p>Le ultime notizie su San Giovanni</p>\
+                </a></li>');
+            items.push('<li><a href="#placelist">\
+                <img src="img/icons/places.png">\
+                <h2>Luoghi</h2>\
+                <p>Scopri i luoghi di Persiceto</p>\
+                </a></li>');
+            items.push('<li><a href="#tweetlist">\
+                <img src="img/icons/twitter.png">\
+                <h2>Tweets</h2>\
+                <p>Ultimi tweet da San Giovanni</p>\
+                </a></li>');
+            items.push('<li><a href="#images">\
+                <img src="img/icons/images.png">\
+                <h2>Immagini</h2>\
+                <p>Foto di San Giovanni</p>\
+                </a></li>');
+            items.push('<li><a href="#history">\
+                <img src="img/icons/history.png">\
+                <h2>Storia</h2>\
+                <p>Il passato e il presente di Persiceto</p>\
+                </a></li>');
 
-        loadByTag: function (tag,elToAppend) {
-            $.getJSON('http://'+config.url+'/feeds?tag=' + tag + '&callback=?', function (feeds) {
-                var items = [];
-                items.push('<li data-role="list-divider" role="heading" data-theme="a">'+ tag + '</li>');
-                $.each(feeds, function (key, feed) {
-                    items.push('<li class="feed-button" id="feed-' + feed.id + '"><a class="setSubTitle" data-id="' + feed.id + '" data-title="' + feed.title + '"  href="#feed/' + feed.id + '">' + feed.title + '</a></li>');
-                });
-                $('<ul/>', {
-                    'data-role' : 'listview',
-                    'data-inset' : 'true',
-                    'class' : 'dynamic newsTag',
-                     html: items.join('')
-                }).appendTo(elToAppend);
-                $('ul.dynamic').listview();
-            });
+            $('<ul/>', {
+                'data-role' : 'listview',
+                'data-inset' : 'true',
+                'class' : 'dynamic',
+                html: items.join('')
+            }).appendTo(this.el);
+            $('ul.dynamic').listview();
+            this.trigger('render');
         },
 
         afterRender: function() {

@@ -3,6 +3,7 @@ define([
     'backbone',
     'feedView',
     'feedListView',
+    'feedOrderByTagListView',
     'galleryView',
     'historyView',
     'homeView',
@@ -15,6 +16,7 @@ define([
         Backbone,
         FeedView,
         FeedListView,
+        FeedOrderByTagListView,
         GalleryView,
         HistoryView,
         HomeView,
@@ -40,6 +42,7 @@ define([
             'feed/:id': 'feed',
             'feedlist': 'feedlist',
             'feedlist/:tag': 'feedlistbytag',
+            'feedorderbytaglist': 'feedorderbytaglist',
             'history': 'history',
             'gallery': 'gallery',
             'place/:id': 'place',
@@ -68,6 +71,11 @@ define([
         feedlistbytag: function(tag) {
             $.mobile.loading('show');
             var feedlist = new FeedListView({'tag': tag});
+        },
+
+        feedorderbytaglist: function() {
+            $.mobile.loading('show');
+            var feedlist = new FeedOrderByTagListView();
         },
 
         history: function() {

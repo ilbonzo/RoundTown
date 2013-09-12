@@ -36,7 +36,10 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'placeModel', '
                 place= model.toJSON();
                 /*jshint multistr: true */
                 items.push('<li class="place-button" id="place-' + place.id + '">\
-                    <a data-id="' + place.id + '" data-title="' + place.name + '" href="#place/' + place.id + '">' + place.name + '</a>\
+                    <a data-id="' + place.id + '" data-title="' + place.name + '" href="#place/' + place.id + '">\
+                    <img src="' + place.icon + '">\
+                    <h2>' + place.name + '</h2>\
+                    </a>\
                     </li>');
             });
 

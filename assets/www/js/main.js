@@ -44,6 +44,7 @@ require.config({
         //views
         'feedView': 'views/feedView',
         'feedListView': 'views/feedListView',
+        'feedOrderByTagListView': 'views/feedOrderByTagListView',
         'galleryView': 'views/galleryView',
         'historyView': 'views/historyView',
         'homeView': 'views/homeView',

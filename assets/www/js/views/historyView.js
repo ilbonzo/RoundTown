@@ -19,14 +19,17 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
 
         // Renders all of the Category models on the UI
         render: function() {
-            this.trigger('render');
             $.getJSON('http://it.wikipedia.org/w/api.php?action=parse&format=json&callback=?', {page:config.wikipedia, prop:'text|images', uselang:'it'}, this.wikipediaHTMLResult);
+            this.trigger('render');
         },
 
         wikipediaHTMLResult: function(data) {
             $('#content').append('<div id="historyContent">' + data.parse.text["*"] + '</div>');
             $('#historyContent a').removeAttr('href').css('cursor','default');
+            $('#historyContent img').remove();
             $('.icona_del_titolo').remove();
+            $('.noprint').remove();
+            $('.mw-editsection').remove();
         },
 
         afterRender: function() {

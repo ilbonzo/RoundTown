@@ -19,7 +19,6 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'photoswipe' ],
 
         // Renders all of the Category models on the UI
         render: function(id) {
-            this.trigger('render');
 
             $.ajax({
                 url: 'http://'+config.url+'/places/' + id +'/images?callback=?',
@@ -41,6 +40,8 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'photoswipe' ],
                         enableMouseWheel: true,
                         enableKeyboard: true
                     });
+
+                    this.trigger('render');
                 },
                 error: function () {
 
