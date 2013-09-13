@@ -19,6 +19,12 @@ require.config({
         },
         'photoswipe': {
             'deps': [ 'klass' ]
+        },
+        'jqueryui': {
+            'deps': ['jquery']
+        },
+        'jqueryuimap': {
+            'deps': ['jquery', 'jqueryui']
         }
     },
 
@@ -34,6 +40,8 @@ require.config({
         'jquerymobile': 'libs/jquery.mobile-1.3.2',
         'klass': 'libs/klass.min',
         'photoswipe': 'libs/code.photoswipe.jquery-3.0.5',
+        'jqueryui': 'libs/ui/jquery-ui',
+        'jqueryuimap': 'libs/ui/jquery.ui.map',
 
         //routers
         'appRouter': 'routers/appRouter',
@@ -51,6 +59,7 @@ require.config({
         'placeView': 'views/placeView',
         'placeImagesView': 'views/placeImagesView',
         'placeListView': 'views/placeListView',
+        'placeMapView': 'views/placeMapView',
         'tweetListView': 'views/tweetListView',
 
         //models

@@ -10,6 +10,7 @@ define([
     'placeView',
     'placeImagesView',
     'placeListView',
+    'placeMapView',
     'tweetListView'
     ], function(
         $,
@@ -23,6 +24,7 @@ define([
         PlaceView,
         PlaceImagesView,
         PlaceListView,
+        PlaceMapView,
         TweetListView) {
 
         // Extends Backbone.Router
@@ -45,6 +47,7 @@ define([
             'feedorderbytaglist': 'feedorderbytaglist',
             'history': 'history',
             'gallery': 'gallery',
+            'map/:lat/:lng': 'placemap',
             'place/:id': 'place',
             'place/:id/images': 'placeimages',
             'placelist': 'placelist',
@@ -106,6 +109,11 @@ define([
         placelisttag: function(tag) {
             $.mobile.loading('show');
             var placelist = new PlaceListView({'tag': tag});
+        },
+
+        placemap: function(lat, lng) {
+            $.mobile.loading('show');
+            var placemap = new PlaceMapView({placeLat: lat, placeLng: lng});
         },
 
         tweetlist: function() {
