@@ -1,7 +1,8 @@
 RoundTown
 =========
 
-Phonegap, Backbone, jQueryMobile, RequireJs web application.
+Phonegap, Backbone, jQueryMobile, RequireJs web application. 
+It's using this web service https://github.com/ilbonzo/RoundTownWs
 
 
 ### Web Version 
