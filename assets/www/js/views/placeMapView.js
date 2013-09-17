@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'config', 'content', 'jqueryuimap' ], function($, _, Backbone, config, content, jqueryuimap) {
+define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _, Backbone, config, content) {
     // Extends Backbone.View
     var PlaceMapView = Backbone.View.extend( {
 
@@ -10,69 +10,48 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'jqueryuimap' ]
             this.on('render', this.afterRender);
             $(this.el).empty();
             content.setTitle('Mappa');
-            content.hideSubTitle();
+            content.showSubTitle();
             content.showRightButton();
             content.hideFeedTagMenu();
             content.showPlaceTagMenu();
-            this.render(options.placeLat, options.placeLng);
+            this.render(options.placeLat, options.placeLng, options.placeAddress);
         },
 
-        // Renders all of the Category models on the UI
-        render: function(lat, lng) {
-            $('#content').append('<div id="map_canvas">' + 'MAP' + lat + ' ' + lng + '</div>');
+        render: function(lat, lng, address) {
+            $('#content').append('<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"><div id="map_canvas"></div></div>');
 
-            // @TODO jquery ui map method
-             $(function() {
-                var latlng = new google.maps.LatLng(config.latitude, config.longitude);
-                $('#map_canvas').gmap({'center': latlng, zoom: 14, 'callback': function () {
-                        $('#map_canvas').gmap('addMarker', {'position': latlng, 'title': 'Hello world!'});
-                    }
-                });
-            });
+            $('#map_canvas').height($(window).height() - 170);
 
-            // @TODO semple method
-            // var center;
-            // var map = null;
+            function initialize() {
+              var myLatlng = new google.maps.LatLng(lat, lng, address);
+              var mapOptions = {
+                zoom: 14,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+              }
 
-            // function Newinitialize(lat,lng) {
-            //     center = new google.maps.LatLng(lat,lng);
-            //     var myOptions = {
-            //         zoom: 14,
-            //         center: center,
-            //         mapTypeId: google.maps.MapTypeId.SATELLITE
-            //     }
-            //     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+              var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-            //     }
+              var contentString = address;
 
-            // function detectBrowser() {
-            //     var useragent = navigator.userAgent;
-            //     var mapdivMap = document.getElementById("map_canvas");
+              var infowindow = new google.maps.InfoWindow({
+                  content: '<div style="height:80px"><strong>' + content.getSubTitle() + '</strong><br/>' + contentString + '</div>'
+              });
 
-            //     if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
-            //         mapdivMap.style.width = '100%';
-            //         mapdivMap.style.height = '100%';
-            //         document.getElementById("container").style.width = '100%';
-            //         document.getElementById("container").style.height = '100%';
-            //         document.getElementById("index").style.height = '100%';
-            //         document.getElementById("index").style.height = '100%';
-            //     } else {
-            //         mapdivMap.style.width = '600px';
-            //         mapdivMap.style.height = '800px';
-            //     }
-            // };
+              var marker = new google.maps.Marker({
+                  position: myLatlng,
+                  map: map,
+                  title: content.getSubTitle()
+              });
 
-            // $('.goMap').on('click', function() {
-            // if(navigator.geolocation) {
-            // detectBrowser();
-            // navigator.geolocation.getCurrentPosition(function(position){
-            // Newinitialize(position.coords.latitude,position.coords.longitude);
-            // });
-            // }else{
-            // detectBrowser();
-            // Newinitialize(52.636161,-1.133065);
-            // }
-            // });
+              google.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(map,marker);
+              });
+              infowindow.open(map,marker);
+            }
+
+            initialize();
+
             this.trigger('render');
         },
 

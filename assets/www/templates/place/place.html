@@ -16,11 +16,17 @@
     <br/>
     <ul data-role="listview" class="dynamic" data-inset="true">
         <li>
+            <% if (place.address) { %>
+            <a href="#map/<%= place.lat %>/<%= place.lng %>/<%= place.address.replace(new RegExp('/', 'g'), '\\') %>" data-title="<%= place.name %>" class="setSubTitle" >
+            <% } %>
             <em>indirizzo</em>:<br/>
             <% if (place.address) { %>
                 <%= place.address %>
             <% } else { %>
                 N/D
+            <% } %>
+            <% if (place.address) { %>
+            </a>
             <% } %>
         </li>
         <li>

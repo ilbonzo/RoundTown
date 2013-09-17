@@ -47,7 +47,7 @@ define([
             'feedorderbytaglist': 'feedorderbytaglist',
             'history': 'history',
             'gallery': 'gallery',
-            'map/:lat/:lng': 'placemap',
+            'map/:lat/:lng/:address': 'placemap',
             'place/:id': 'place',
             'place/:id/images': 'placeimages',
             'placelist': 'placelist',
@@ -111,9 +111,9 @@ define([
             var placelist = new PlaceListView({'tag': tag});
         },
 
-        placemap: function(lat, lng) {
+        placemap: function(lat, lng, address) {
             $.mobile.loading('show');
-            var placemap = new PlaceMapView({placeLat: lat, placeLng: lng});
+            var placemap = new PlaceMapView({placeLat: lat, placeLng: lng, placeAddress: address});
         },
 
         tweetlist: function() {

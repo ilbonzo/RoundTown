@@ -16,6 +16,10 @@ define(['config'], function(config) {
             $('#subTitle').html(subTitle);
         },
 
+        getSubTitle: function () {
+            return $('#subTitle').html();
+        },
+
         showSubTitle: function() {
             $('#subTitle').show();
         },
