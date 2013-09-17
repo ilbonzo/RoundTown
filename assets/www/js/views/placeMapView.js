@@ -20,7 +20,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
         render: function(lat, lng, address) {
             $('#content').append('<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;"><div id="map_canvas"></div></div>');
 
-            $('#map_canvas').height($(window).height() - 170);
+            $('#map_canvas').height($(window).height() - 210);
 
             function initialize() {
               var myLatlng = new google.maps.LatLng(lat, lng, address);
