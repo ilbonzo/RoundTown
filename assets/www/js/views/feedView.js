@@ -42,7 +42,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
                             <h3 class="ui-collapsible-heading">' + n.title + '</h3>\
                             <time>' + n.date + '</time>\
                             <p>' + n.description + '</p>\
-                            <footer><a href="' + n.link +' target="_blank" rel="external">fonte</a> | <author>' + n.author + '</author></footer>\
+                            <footer><a href="' + n.link +'" target="_blank" rel="external">fonte</a> | <author>' + n.author + '</author></footer>\
                             </div>');
                     });
                     $('<div/>', {
