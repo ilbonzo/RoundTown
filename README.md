@@ -17,3 +17,8 @@ http://www.sanzvan.it
 ### Google Play 
 https://play.google.com/store/apps/details?id=com.roundtown.sanzvan
 
+Trello Board
+------------
+
+https://trello.com/b/T77KVRdx/sanzvan
+
