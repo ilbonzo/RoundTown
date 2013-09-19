@@ -1,7 +1,7 @@
 define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'feedsCollection' ], function($, _, Backbone, config, content, Feed, FeedsCollection) {
 
     // Extends Backbone.Viewi
-    var HomeView = Backbone.View.extend( {
+    var FeedOrderByTagListView = Backbone.View.extend( {
 
         el: $('#content'),
 
@@ -60,6 +60,6 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
     });
 
     // Returns the View class
-    return HomeView;
+    return FeedOrderByTagListView;
 
 });

@@ -1,6 +1,9 @@
 define([
     'jquery',
     'backbone',
+    'facebookFeedView',
+    'facebookFeedListView',
+    'facebookFeedOrderByFbTagListView',
     'feedView',
     'feedListView',
     'feedOrderByTagListView',
@@ -15,6 +18,9 @@ define([
     ], function(
         $,
         Backbone,
+        FacebookFeedView,
+        FacebookFeedListView,
+        FacebookFeedOrderByFbTagListView,
         FeedView,
         FeedListView,
         FeedOrderByTagListView,
@@ -41,10 +47,13 @@ define([
         routes: {
             // When there is no hash bang on the url, the home method is called
             '': 'home',
+            'facebook/:id': 'facebookfeed',
+            'facebooklist': 'facebookfeedlist',
+            'facebooktaglist': 'facebookfeedorderbyfbtaglist',
             'feed/:id': 'feed',
             'feedlist': 'feedlist',
             'feedlist/:tag': 'feedlistbytag',
-            'feedorderbytaglist': 'feedorderbytaglist',
+            'feedtaglist': 'feedorderbytaglist',
             'history': 'history',
             'gallery': 'gallery',
             'map/:lat/:lng/:address': 'placemap',
@@ -61,6 +70,21 @@ define([
             var home = new HomeView();
         },
 
+        facebookfeed: function(id) {
+            $.mobile.loading('show');
+            var facebookfeed = new FacebookFeedView({feedId: id});
+        },
+
+        facebookfeedlist: function() {
+            $.mobile.loading('show');
+            var facebookfeedlist = new FacebookFeedListView();
+        },
+
+        facebookfeedorderbyfbtaglist: function() {
+            $.mobile.loading('show');
+            var facebookfeedorderbyfbtaglist = new FacebookFeedOrderByFbTagListView();
+        },
+
         feed: function(id) {
             $.mobile.loading('show');
             var feed = new FeedView({feedId: id});
@@ -68,7 +92,7 @@ define([
 
         feedlist: function() {
             $.mobile.loading('show');
-            var feedlist = new FeedListView();
+            var feedorderbytaglist = new FeedListView();
         },
 
         feedlistbytag: function(tag) {
