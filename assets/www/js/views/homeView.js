@@ -22,7 +22,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
         render: function() {
             var items = [];
             /*jshint multistr: true */
-            items.push('<li><a href="#feedorderbytaglist">\
+            items.push('<li><a href="#feedtaglist">\
                 <img src="img/icons/news.png">\
                 <h2>News</h2>\
                 <p>Le ultime notizie su San Giovanni</p>\
@@ -31,6 +31,11 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
                 <img src="img/icons/places.png">\
                 <h2>Luoghi</h2>\
                 <p>Scopri i luoghi di Persiceto</p>\
+                </a></li>');
+            items.push('<li><a href="#facebooktaglist">\
+                <img src="img/icons/facebook.png">\
+                <h2>Facebook</h2>\
+                <p>Ultime notizie da Facebook su San Giovanni</p>\
                 </a></li>');
             items.push('<li><a href="#tweetlist">\
                 <img src="img/icons/twitter.png">\

@@ -42,6 +42,9 @@ require.config({
         'weather': 'controllers/weather',
 
         //views
+        'facebookFeedView': 'views/facebookFeedView',
+        'facebookFeedListView': 'views/facebookFeedListView',
+        'facebookFeedOrderByFbTagListView': 'views/facebookFeedOrderByFbTagListView',
         'feedView': 'views/feedView',
         'feedListView': 'views/feedListView',
         'feedOrderByTagListView': 'views/feedOrderByTagListView',
@@ -55,12 +58,14 @@ require.config({
         'tweetListView': 'views/tweetListView',
 
         //models
+        'facebookFeedModel': 'models/facebookFeedModel',
         'feedModel': 'models/feedModel',
         'newsModel': 'models/newsModel',
         'placeModel': 'models/placeModel',
         'tweetModel': 'models/tweetModel',
 
         //collections
+        'facebookFeedsCollection': 'collections/facebookFeedsCollection',
         'feedsCollection': 'collections/feedsCollection',
         'placesCollection': 'collections/placesCollection',
         'tweetsCollection': 'collections/tweetsCollection',
