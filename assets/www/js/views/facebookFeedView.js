@@ -38,7 +38,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content' ], function($, _
                         }
 
                         if (n.title === '') {
-                            n.title = 'TTT'
+                            n.title = 'News'
                         }
                         /*jshint multistr: true */
                         items.push('<div data-role="collapsible"  data-collapsed="true" class="news-button">\
