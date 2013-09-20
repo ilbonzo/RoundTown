@@ -55,6 +55,7 @@ require.config({
         'placeImagesView': 'views/placeImagesView',
         'placeListView': 'views/placeListView',
         'placeMapView': 'views/placeMapView',
+        'placeTagView': 'views/placeTagView',
         'tweetListView': 'views/tweetListView',
 
         //models

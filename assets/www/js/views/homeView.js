@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'feedsCollection' ], function($, _, Backbone, config, content, Feed, FeedsCollection) {
+define(['jquery', 'underscore', 'backbone', 'config', 'content'], function($, _, Backbone, config, content) {
 
     // Extends Backbone.Viewi
     var HomeView = Backbone.View.extend( {
@@ -27,7 +27,7 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'feedModel', 'f
                 <h2>News</h2>\
                 <p>Le ultime notizie su San Giovanni</p>\
                 </a></li>');
-            items.push('<li><a href="#placelist">\
+            items.push('<li><a href="#placetag">\
                 <img src="img/icons/places.png">\
                 <h2>Luoghi</h2>\
                 <p>Scopri i luoghi di Persiceto</p>\
