@@ -1,9 +1,9 @@
 define([], function() {
     return {
-        url: 'api.sanzvan.it/1.0',
+        url: 'api.sanzvan.bonzo:88/1.0',
         wikipedia: 'San Giovanni in Persiceto',
         tags: ['Comune','Scuola','Associazioni', 'Varie', 'Spettacoli', 'Musei'],
-        fbTags: ['Istituzionali','Sport'],
+        fbTags: ['Istituzionali', 'Carnevale' ,'Sport', 'Musica'],
         latitude: 44.640833,
         longitude: 11.185,
         foursquareCategories: [

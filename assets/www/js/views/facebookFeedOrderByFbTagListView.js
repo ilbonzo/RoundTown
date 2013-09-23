@@ -24,6 +24,10 @@ define(['jquery', 'underscore', 'backbone', 'config', 'content', 'facebookFeedMo
             this.loadByTag(config.fbTags[0], '#fbTag0');
             $(this.el).append('<div id="fbTag1"></div>');
             this.loadByTag(config.fbTags[1],'#fbTag1');
+            $(this.el).append('<div id="fbTag2"></div>');
+            this.loadByTag(config.fbTags[2],'#fbTag2');
+            $(this.el).append('<div id="fbTag3"></div>');
+            this.loadByTag(config.fbTags[3],'#fbTag3');
         },
 
         loadByTag: function (fbTag,elToAppend) {
