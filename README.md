@@ -5,6 +5,9 @@ Phonegap, Backbone, jQueryMobile, RequireJs web application.
 
 It's use web service https://github.com/ilbonzo/RoundTownWs
 
+Phonegap version
+http://cordova.apache.org/docs/en/3.0.0/index.html
+
 Info
 --------------------
 
