@@ -1,6 +1,7 @@
 define(['jquery', 'content'], function($, content) {
         return {
             start: function () {
+                console.log('init Start');
                 //register event
                 $(document).on('click', '#panel-nav a', function () {
                     $('#panel-nav').panel('close');

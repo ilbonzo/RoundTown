@@ -43,4 +43,5 @@ tmp/**/*
 .buildpath
 
 #cordova
-.cordova
+platforms
+merges
