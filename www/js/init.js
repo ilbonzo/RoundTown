@@ -1,6 +1,13 @@
 define(['jquery', 'content'], function($, content) {
         return {
             start: function () {
+
+                //ios7 fix
+                if (navigator.userAgent.match(/(iPad|iPhone);.*CPU.*OS 7_\d/i)) {
+                    $('body').addClass('ios7');
+                    $('body').append('<div id="ios7statusbar"/>');
+                }
+
                 //register event
                 $(document).on('click', '#panel-nav a', function () {
                     $('#panel-nav').panel('close');
