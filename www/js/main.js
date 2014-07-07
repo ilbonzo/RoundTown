@@ -31,7 +31,7 @@ require.config({
         'jqueryjsonp': 'libs/jquery.jsonp',
         'underscore': 'libs/underscore',
         'backbone': 'libs/backbone',
-        'jquerymobile': 'libs/jquery.mobile-1.3.2',
+        'jquerymobile': 'libs/jquery.mobile-1.4.3',
         'klass': 'libs/klass.min',
         'photoswipe': 'libs/code.photoswipe.jquery-3.0.5',
 
