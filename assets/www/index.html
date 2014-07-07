@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Round Town - San Zvan</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Conoscere San Giovanni in Persiceto: cosa visitare, dove mangiare e sapere cosa le persone del posto dicono sui social Network" />
+    <meta property="og:title" content="San Zvan - San Giovanni in Persiceto"/>
+    <meta property="og:description" content="Conoscere San Giovanni in Persiceto: cosa visitare, dove mangiare e sapere cosa le persone del posto dicono sui social Network">
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://www.sanzvan.it/"/>
+    <meta property="og:image" content="http://www.sanzvan.it/fb.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="426">
+    <meta property="og:image:height" content="613">
+    <link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.4.3.css" />
+    <link rel="stylesheet"  href="css/photoswipe/photoswipe.css" />
+    <link rel="stylesheet"  href="css/themes/default/roundtown.css" />
+    <link rel="stylesheet"  href="css/main.css" />
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44095234-1', 'sanzvan.it');
+      ga('send', 'pageview');
+
+    </script>
+
+  </head>
+  <body>
+  <div data-role="page" data-theme="a" id="index">
+    <div data-role="panel" id="panel-nav" data-position="left" data-display="push" data-position-fixed="true">
+      <ul data-role="listview">
+        <li data-role="list-divider" role="heading" data-theme="a" class="ui-li ui-li-divider ui-bar-a ui-first-child"></li>
+        <li><a id="home" href="#">Home</a></li>
+        <li><a id="news" href="#feedtaglist">News</a></li>
+        <li><a id="place" href="#placetag">Luoghi</a></li>
+        <li><a id="facebook" href="#facebooktaglist">Facebook</a></li>
+        <li><a id="tweet" href="#tweetlist">Tweets</a></li>
+        <li><a id="gallery" href="#gallery">Immagini</a></li>
+        <li><a id="history" href="#history">Storia</a></li>
+      </ul>
+    </div><!-- /panel -->
+    <div data-role="panel" id="sec-panel-nav" data-position="right" data-display="push" data-position-fixed="true">
+    </div><!-- /panel -->
+
+
+    <div data-role="header"  data-position="fixed">
+      <h1 id="title">San Giovanni in Persiceto | San Zvan - Round Town</h1>
+      <a href="#panel-nav" data-icon="bars" data-iconpos="notext">Navigation</a>
+      <a id="right-button" href="#sec-panel-nav" data-icon="grid" data-iconpos="notext" data-role="button">Sub Navigation</a>
+    </div><!-- /header -->
+
+    <div id="container" data-role="content">
+      <h2 id="subTitle"></h2>
+      <div id="content">
+
+          <div class="app">
+              <div id="deviceready" class="blink">
+                <img src="fb.png" />
+              </div>
+          </div>
+
+      </div><!-- /content -->
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li id="backButton"><a data-icon="back" href="#" data-iconpos="notext">Back</a></li>
+          <li><a data-icon="edit" href="mailto:sanzvan@magni.me" data-iconpos="notext">Contattaci</a></li>
+          <li><a data-icon="gear" href="http://app.sanzvan.it" data-iconpos="notext">App</a></li>
+        </ul>
+      </div><!-- /navbar -->
+    </div>
+
+    </div><!-- /page -->
+
+    <div id="startOverlay"></div>
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script data-main="js/main" src="js/libs/require.js"></script>
+  </body>
+</html>
